@@ -13,17 +13,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+public class SwaggerConfiguration {
 
 
     /*
-     * URL - http://localhost:8080/api/swagger-ui/
+     * URL - http://localhost:8080/api/swagger-ui.html
      * */
     @Bean
-    public Docket api(){
+    public Docket swaggerConfig(){
         return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.home.thc.Controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
