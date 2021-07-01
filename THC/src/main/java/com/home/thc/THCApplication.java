@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThcApplication {
+public class THCApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ThcApplication.class, args);
+        SpringApplication.run(THCApplication.class, args);
     }
 
 }

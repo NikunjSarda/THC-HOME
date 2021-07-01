@@ -1,35 +1,24 @@
-package com.home.thc.Model;
+package com.home.thc.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
-@Entity
-@Table(name = "menu")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Menu implements Serializable {
+public class MenuDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private long id;
-
-    @Column(name = "type")
+    @JsonProperty(value = "type")
     private String type;
-
-    @Column(name = "item")
+    @JsonProperty(value = "item")
     private String item;
-
-    @Column(name = "price")
+    @JsonProperty(value = " price")
     private double price;
-
 }

@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  shutdown: graceful
+  servlet:
+    context-path: /api
+# Actuator endpoint configurations
+info:
+  app:
+    version: 0.0.1
+    release: '0_20210610'
+    name: ${spring.application.name}
+    servlet:
+      context-path: /NotificationRelayApp
+    java:
+      version: 11
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+# Spring configurations
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName = THC
+    username: sa
+    password: root
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  profiles:
+    active: local
+  application:
+    name: THC
