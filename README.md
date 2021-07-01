@@ -1,10 +1,14 @@
 # THC-HOME
+
 Design and Develop an administrative interface for Texas Hamburger company Texas Hamburger Company -
 THC - Home. The administrative function should allow the users to add, list, search, update and delete 
 locations, menus, reservations, and open hours. Use all the concepts you’ve learned as part of the program 
 into your design and coding. Build it as a spring boot application using Mongo and any RDBMS DB.
-Key Requirements
+
+Key Requirements:
+
 • Use industry standard naming convention for REST URI
+
 • Add pagination to your GET services, introduce status filters for location/Menu
 • Exception handling & Logging with log4j2 (Defensive logging with appropriate details)
 • Use Lombok for getter/setter
