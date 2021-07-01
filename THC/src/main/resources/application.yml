@@ -28,7 +28,7 @@ spring:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
       dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
   profiles:

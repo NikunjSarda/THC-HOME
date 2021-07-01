@@ -23,7 +23,7 @@ public class MenuController {
 
     @GetMapping("/MenuList")
     @ApiOperation(value = "Getting all full menu",
-    notes = "",
+    notes = "Returns full menu",
     response = Menu.class)
     public ResponseEntity<List<Menu>> listAllMenu(){
         return new ResponseEntity<>(menuServices.findAllMenus(), HttpStatus.OK);
