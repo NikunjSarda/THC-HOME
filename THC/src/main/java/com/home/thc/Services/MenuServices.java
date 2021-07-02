@@ -32,16 +32,16 @@ public class MenuServices implements MenuInterface {
     }
 
     @Override
-    public Menu getMenuById(String id) {
-        return menuRepo.findById(id).orElseThrow(() -> new MenuException(id));
-    }
-
-    @Override
     public Boolean createMenu(MenuDTO menuDTO) {
         Menu menu = new Menu();
         BeanUtils.copyProperties(menuDTO, menu);
         menuRepo.save(menu);
         return Boolean.TRUE;
+    }
+
+    @Override
+    public Menu getMenuById(String id) {
+        return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
     }
 
     @Override

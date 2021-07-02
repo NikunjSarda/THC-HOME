@@ -24,7 +24,7 @@ public class MenuController {
         this.menuServices = menuServices;
     }
 
-    @GetMapping("/MenuList")
+    @GetMapping(value = "/MenuList", produces = "application/json")
     @ApiOperation(value = "Getting all full menu",
             notes = "Returns full menu")
     @ApiResponses(value= {
@@ -68,4 +68,37 @@ public class MenuController {
                         .build();
     }
 
+    @GetMapping(value = "/Menu/{id}", produces = "application/json")
+    @ApiOperation(value = "Create a Menu",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<Menu> getMenuById(@PathVariable("id") String id){
+        return  Response.<Menu>builder()
+                .meta(ResponseMetaData.builder()
+                        .statusCode(200)
+                        .statusMessage(StatusMessage.SUCCESS.name()).build())
+                .data((menuServices.getMenuById(id)))
+                .build();
+    }
+
+    @GetMapping(value = "/Menu/{type}", produces = "application/json")
+    @ApiOperation(value = "Create a Menu",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<List<Menu>> getMenuByType(@PathVariable("type") String type){
+        return  Response.<List<Menu>>builder()
+                .meta(ResponseMetaData.builder()
+                        .statusCode(200)
+                        .statusMessage(StatusMessage.SUCCESS.name()).build())
+                .data((menuServices.findByMenuItem(type)))
+                .build();
+    }
 }

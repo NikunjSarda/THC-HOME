@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MenuRepository extends JpaRepository<Menu, String> {
+public interface MenuRepository extends JpaRepository<Menu, Long> {
 
     List<Menu> findAll();
     List<Menu> findByType(String type);
