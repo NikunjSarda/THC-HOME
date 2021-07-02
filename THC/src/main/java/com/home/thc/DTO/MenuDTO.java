@@ -19,6 +19,6 @@ public class MenuDTO {
     private String type;
     @JsonProperty(value = "item")
     private String item;
-    @JsonProperty(value = " price")
+    @JsonProperty(value = "price")
     private double price;
 }

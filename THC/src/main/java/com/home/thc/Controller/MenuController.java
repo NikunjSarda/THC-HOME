@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @Log4j2
-@CrossOrigin
 public class MenuController {
 
     MenuServices menuServices;
