@@ -6,7 +6,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Time;
 
 @Entity
 @Table(name = "reservations")
@@ -29,7 +28,7 @@ public class Reservation implements Serializable {
     private Date date;
 
     @Column(name = "time")
-    private Time time;
+    private String time;
 
     @Column(name = "eventName")
     private String eventName;
