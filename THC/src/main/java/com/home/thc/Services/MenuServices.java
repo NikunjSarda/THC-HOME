@@ -58,11 +58,21 @@ public class MenuServices implements MenuInterface {
     @Override
     public Boolean updateMenu(String id, MenuDTO menuDTO) {
         Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
-        if(!menu.isPresent()) {
+        if(menu.isEmpty()) {
             throw new MenuException(id);
         }
         BeanUtils.copyProperties(menuDTO, menu.get());
         menuRepo.save(menu.get());
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean deleteMenu(String id) {
+        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
+        if(menu.isEmpty()) {
+            throw new MenuException(id);
+        }
+        menuRepo.delete(menu.get());
         return Boolean.TRUE;
     }
 
