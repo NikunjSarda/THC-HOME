@@ -1,9 +1,7 @@
 package com.home.thc.Services;
 
 import com.home.thc.DTO.ReservationDTO;
-import com.home.thc.Exception.MenuException;
 import com.home.thc.Exception.ReservationException;
-import com.home.thc.Model.Menu;
 import com.home.thc.Model.Reservation;
 import com.home.thc.Repository.ReservationsRepository;
 import com.home.thc.Services.Interface.ReservationInterface;
@@ -35,14 +33,14 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public Reservation getReservationById(String id) {
-        return reservationsRepo.findById(Long.parseLong(id)).orElseThrow(() -> new ReservationException(id));
+        return reservationsRepo.findByCustomerId(id);
     }
 
-    @Override
-    public List<Reservation> getReservationByLocation(String id) {
-        //TODO
-        return null;
-    }
+//    @Override
+//    public List<Reservation> getReservationByLocation(String id) {
+//        //TODO
+//        return null;
+//    }
 
     @Override
     public Boolean createReservation(ReservationDTO reservationDTO) {
@@ -54,8 +52,8 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public Boolean updateReservation(String id, ReservationDTO reservationDTO) {
-        Optional<Reservation> reservation = reservationsRepo.findById(Long.parseLong(id));
-        if(!reservation.isPresent()) {
+        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findByCustomerId(id));
+        if(reservation.isEmpty()) {
             throw new ReservationException(id);
         }
         BeanUtils.copyProperties(reservationDTO, reservation.get());
@@ -65,8 +63,8 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public Boolean deleteReservation(String id) {
-        Optional<Reservation> reservation = reservationsRepo.findById(Long.parseLong(id));
-        if(!reservation.isPresent()) {
+        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findByCustomerId(id));
+        if(reservation.isEmpty()) {
             throw new ReservationException(id);
         }
         reservationsRepo.delete(reservation.get());

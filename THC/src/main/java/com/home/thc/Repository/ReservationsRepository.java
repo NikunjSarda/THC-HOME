@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ReservationsRepository extends JpaRepository<Reservation, Long> {
+public interface ReservationsRepository extends JpaRepository<Reservation, String> {
 
     @NotNull
     List<Reservation> findAll();
+    Reservation findByCustomerId(String id);
 }

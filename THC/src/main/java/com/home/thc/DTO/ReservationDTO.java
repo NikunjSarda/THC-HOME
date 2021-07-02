@@ -7,7 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 @Getter
 @Setter
@@ -23,6 +24,8 @@ public class ReservationDTO {
     private Date date;
     @JsonProperty(value = "time")
     private String time;
+    @JsonProperty(value = "eventName")
+    private String eventName;
     @JsonProperty(value = "guests")
     private int guests;
 }
