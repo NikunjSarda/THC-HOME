@@ -8,25 +8,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.sql.Date;
-
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ReservationDTO implements Serializable {
+public class LocationDTO implements Serializable {
 
     private long id;
-    @JsonProperty(value = "customerId")
-    private String customerId;
-    @JsonProperty(value = "date")
-    private Date date;
-    @JsonProperty(value = "time")
-    private String time;
-    @JsonProperty(value = "eventName")
-    private String eventName;
-    @JsonProperty(value = "guests")
-    private int guests;
+    @JsonProperty(value = "name")
+    private String name;
+    @JsonProperty(value = "address")
+    private String address;
+    @JsonProperty(value = "phone")
+    private double phone;
+    @JsonProperty(value = "status")
+    private String status;
 }
