@@ -2,10 +2,11 @@ package com.home.thc.Services;
 
 import com.home.thc.DTO.ReservationDTO;
 import com.home.thc.Model.Reservation;
+import com.home.thc.Services.Interface.ReservationInterface;
 
 import java.util.List;
 
-public class ReservationServices implements ReservationInterface{
+public class ReservationServices implements ReservationInterface {
 
     @Override
     public List<Reservation> getAllReservations() {

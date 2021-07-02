@@ -1,4 +1,4 @@
-package com.home.thc.Services;
+package com.home.thc.Services.Interface;
 
 import com.home.thc.DTO.ReservationDTO;
 import com.home.thc.Model.Reservation;
