@@ -1,7 +1,6 @@
 package com.home.thc.Controller;
 
 import com.home.thc.Model.OpenHours;
-import com.home.thc.Model.Reservation;
 import com.home.thc.Response.Response;
 import com.home.thc.Response.ResponseMetaData;
 import com.home.thc.Response.StatusMessage;
