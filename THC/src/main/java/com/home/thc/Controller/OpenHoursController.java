@@ -1,5 +1,6 @@
 package com.home.thc.Controller;
 
+import com.home.thc.DTO.OpenHoursDTO;
 import com.home.thc.Model.OpenHours;
 import com.home.thc.Response.Response;
 import com.home.thc.Response.ResponseMetaData;
@@ -9,8 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +38,31 @@ public class OpenHoursController {
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
                 .data((openHoursServices.getAll()))
                 .build();
+    }
+
+    @PostMapping(value = "/OpenHoursCreate", consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    @ApiOperation(value = "Create a open hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> createOpenHours(@RequestBody OpenHoursDTO openHours){
+        return openHoursServices.createOpenHours(openHours) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Location Created")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Location Not Created")
+                        .build();
     }
 }
