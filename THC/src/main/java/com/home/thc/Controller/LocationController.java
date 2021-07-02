@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @Log4j2
 public class LocationController {
 
@@ -26,7 +26,6 @@ public class LocationController {
     }
 
     @GetMapping(value = "/LocationList", produces = "application/json")
-    @ResponseBody
     @ApiOperation(value = "Getting all Location",
             notes = "Returns every location")
     @ApiResponses(value= {
@@ -43,7 +42,6 @@ public class LocationController {
     }
 
     @GetMapping(value = "/LocationById/{id}", produces = "application/json")
-    @ResponseBody
     @ApiOperation(value = "Find a location",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -61,7 +59,6 @@ public class LocationController {
     }
 
     @GetMapping(value = "/LocationByName/{name}", produces = "application/json")
-    @ResponseBody
     @ApiOperation(value = "Get Location by name",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -79,7 +76,6 @@ public class LocationController {
     }
 
     @PostMapping(value = "/LocationCreate", consumes = "application/json", produces = "application/json")
-    @ResponseBody
     @ApiOperation(value = "Create a Location",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -105,7 +101,6 @@ public class LocationController {
     }
 
     @PutMapping(value = "/LocationUpdate/{id}", consumes = "application/json", produces = "application/json")
-    @ResponseBody
     @ApiOperation(value = "Update a location",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -131,7 +126,6 @@ public class LocationController {
     }
 
     @DeleteMapping(value = "/LocationDelete/{id}")
-    @ResponseBody
     @ApiOperation(value = "Delete a Location",
             notes = "provide necessary details")
     @ApiResponses(value= {
