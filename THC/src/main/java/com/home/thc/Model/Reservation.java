@@ -1,5 +1,6 @@
 package com.home.thc.Model;
 
+import com.fasterxml.jackson.annotation.JacksonAnnotation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
@@ -21,7 +22,7 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "customerId")
+    @Column(name = "customer_id")
     private String customerId;
 
     @Column(name = "date")
@@ -30,7 +31,7 @@ public class Reservation implements Serializable {
     @Column(name = "time")
     private String time;
 
-    @Column(name = "eventName")
+    @Column(name = "event_name")
     private String eventName;
 
     @Column(name = "guests")

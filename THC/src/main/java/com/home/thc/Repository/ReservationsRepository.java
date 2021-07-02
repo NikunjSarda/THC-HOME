@@ -10,5 +10,4 @@ import java.util.List;
 public interface ReservationsRepository extends JpaRepository<Reservation, Long> {
 
     List<Reservation> findAll();
-    Reservation findByCustomerId();
 }
