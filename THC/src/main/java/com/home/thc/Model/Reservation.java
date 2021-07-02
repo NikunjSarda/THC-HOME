@@ -1,6 +1,5 @@
 package com.home.thc.Model;
 
-import com.fasterxml.jackson.annotation.JacksonAnnotation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
