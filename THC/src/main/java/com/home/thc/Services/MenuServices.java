@@ -11,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Log4j2
@@ -25,12 +26,26 @@ public class MenuServices implements MenuInterface {
     @Override
     public List<Menu> getAllMenus() {
         List<Menu> menuList = new ArrayList<>(menuRepo.findAll());
-        if(menuList.isEmpty()){
+        if (menuList.isEmpty()) {
             throw new EmptyStackException();
         }
         return menuList;
     }
 
+    @Override
+    public Menu getMenuById(String id) {
+        return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
+    }
+
+    @Override
+    public List<Menu> findByMenuName(String name) {
+        return null;
+    }
+
+    @Override
+    public List<Menu> findByMenuType(String type) {
+        return null;
+    }
     @Override
     public Boolean createMenu(MenuDTO menuDTO) {
         Menu menu = new Menu();
@@ -40,17 +55,15 @@ public class MenuServices implements MenuInterface {
     }
 
     @Override
-    public Menu getMenuById(String id) {
-        return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
+    public Boolean updateMenu(String id, MenuDTO menuDTO) {
+        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
+        if(!menu.isPresent()) {
+            throw new MenuException(id);
+        }
+        BeanUtils.copyProperties(menuDTO, menu.get());
+        menuRepo.save(menu.get());
+        return Boolean.TRUE;
     }
 
-    @Override
-    public List<Menu> findByMenuType(String type) {
-        return null;
-    }
 
-    @Override
-    public List<Menu> findByMenuItem(String item) {
-        return null;
-    }
 }

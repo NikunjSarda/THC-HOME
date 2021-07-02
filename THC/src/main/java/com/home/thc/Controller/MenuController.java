@@ -33,39 +33,12 @@ public class MenuController {
             @ApiResponse(code = 200, message = "OK")
     })
     public Response<List<Menu>> listAllMenu(){
-        System.out.println("request hit");
         return Response.<List<Menu>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
                 .data((menuServices.getAllMenus()))
                 .build();
-    }
-
-    @PostMapping(value = "/MenuCreate", consumes = "application/json", produces = "application/json")
-    @ApiOperation(value = "Create a Menu",
-            notes = "provide necessary details")
-    @ApiResponses(value= {
-            @ApiResponse(code = 201, message = "CREATED"),
-            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
-            @ApiResponse(code = 200, message = "OK")
-    })
-    public Response<String> createMenu(@RequestBody MenuDTO menu){
-        System.out.println(menu);
-        return menuServices.createMenu(menu) == Boolean.TRUE ?
-                Response.<String>builder()
-                        .meta(ResponseMetaData.builder()
-                                .statusCode(200)
-                                .statusMessage(StatusMessage.SUCCESS.name()).build())
-                        .data("Menu Created")
-                        .build()
-                :
-                Response.<String>builder()
-                        .meta(ResponseMetaData.builder()
-                                .statusCode(200)
-                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
-                        .data("Menu Not Created")
-                        .build();
     }
 
     @GetMapping(value = "/Menu/{id}", produces = "application/json")
@@ -85,8 +58,25 @@ public class MenuController {
                 .build();
     }
 
+    @GetMapping(value = "/Menu/{name}", produces = "application/json")
+    @ApiOperation(value = "Get Menu by name",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<List<Menu>> getMenuByName(@PathVariable("name") String name){
+        return  Response.<List<Menu>>builder()
+                .meta(ResponseMetaData.builder()
+                        .statusCode(200)
+                        .statusMessage(StatusMessage.SUCCESS.name()).build())
+                .data((menuServices.findByMenuName(name)))
+                .build();
+    }
+
     @GetMapping(value = "/Menu/{type}", produces = "application/json")
-    @ApiOperation(value = "Create a Menu",
+    @ApiOperation(value = "Get Menu by Type",
             notes = "provide necessary details")
     @ApiResponses(value= {
             @ApiResponse(code = 201, message = "CREATED"),
@@ -98,7 +88,57 @@ public class MenuController {
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((menuServices.findByMenuItem(type)))
+                .data((menuServices.findByMenuType(type)))
                 .build();
+    }
+
+    @PostMapping(value = "/MenuCreate", consumes = "application/json", produces = "application/json")
+    @ApiOperation(value = "Create a Menu",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> createMenu(@RequestBody MenuDTO menu){
+        return menuServices.createMenu(menu) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Menu Created")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Menu Not Created")
+                        .build();
+    }
+
+    @PutMapping(value = "/MenuUpdate/{id}", consumes = "application/json", produces = "application/json")
+    @ApiOperation(value = "Update a Menu",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> createUpdate(@PathVariable(name = "id") String id, @RequestBody MenuDTO menu){
+        return menuServices.updateMenu(id, menu) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Menu Updated")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Menu Not Updated")
+                        .build();
     }
 }

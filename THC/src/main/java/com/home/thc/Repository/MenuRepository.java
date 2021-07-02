@@ -10,6 +10,6 @@ import java.util.List;
 public interface MenuRepository extends JpaRepository<Menu, Long> {
 
     List<Menu> findAll();
+    List<Menu> findByName(String name);
     List<Menu> findByType(String type);
-    List<Menu> findByItem(String item);
 }

@@ -20,13 +20,16 @@ public class Menu implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "type")
     private String type;
 
-    @Column(name = "item")
-    private String item;
-
     @Column(name = "price")
     private double price;
+
+    @Column(name = "ingredients")
+    private String ingredients;
 
 }

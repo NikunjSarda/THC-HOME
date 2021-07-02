@@ -15,10 +15,12 @@ import lombok.Setter;
 public class MenuDTO {
 
     private long id;
+    @JsonProperty(value = "name")
+    private String name;
     @JsonProperty(value = "type")
     private String type;
-    @JsonProperty(value = "item")
-    private String item;
     @JsonProperty(value = "price")
     private double price;
+    @JsonProperty(value = "ingredients")
+    private String ingredients;
 }
