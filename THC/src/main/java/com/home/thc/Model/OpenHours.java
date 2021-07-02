@@ -6,7 +6,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.lang.reflect.Type;
 
 @Entity
 @Table(name = "open_hours")
