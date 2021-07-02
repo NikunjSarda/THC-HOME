@@ -9,7 +9,7 @@ public interface LocationInterface {
 
     List<Location> getAllLocation();
     Location getByLocationId(String id);
-    Location findByLocationName(String name);
+    List<Location> findByLocationName(String name);
     /*
     find by zip code(sort by distance), city(all), state(all)
      */

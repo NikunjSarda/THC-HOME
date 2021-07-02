@@ -22,7 +22,7 @@ public class LocationDTO implements Serializable {
     @JsonProperty(value = "address")
     private String address;
     @JsonProperty(value = "phone")
-    private double phone;
+    private String phone;
     @JsonProperty(value = "status")
     private String status;
 }

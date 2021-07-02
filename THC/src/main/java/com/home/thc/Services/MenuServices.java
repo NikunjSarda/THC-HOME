@@ -35,17 +35,25 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Menu getMenuById(String id) {
-        return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
+        return menuRepo.findById(id).orElseThrow(() -> new MenuException(id));
     }
 
     @Override
     public List<Menu> findByMenuName(String name) {
-        return null;
+        List<Menu> menuList = new ArrayList<>(menuRepo.findByName(name));
+        if (menuList.isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return menuList;
     }
 
     @Override
     public List<Menu> findByMenuType(String type) {
-        return null;
+        List<Menu> menuList = new ArrayList<>(menuRepo.findByType(type));
+        if (menuList.isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return menuList;
     }
     @Override
     public Boolean createMenu(MenuDTO menuDTO) {
@@ -57,7 +65,7 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Boolean updateMenu(String id, MenuDTO menuDTO) {
-        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
+        Optional<Menu> menu = menuRepo.findById(id);
         if(menu.isEmpty()) {
             throw new MenuException(id);
         }
@@ -68,7 +76,7 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Boolean deleteMenu(String id) {
-        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
+        Optional<Menu> menu = menuRepo.findById(id);
         if(menu.isEmpty()) {
             throw new MenuException(id);
         }

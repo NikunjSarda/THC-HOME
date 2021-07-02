@@ -12,5 +12,5 @@ public interface LocationRepository extends JpaRepository<Location, Long> {
 
     @NotNull
     List<Location> findAll();
-    Location findByName(String name);
+    List<Location> findByName(String name);
 }

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MenuRepository extends JpaRepository<Menu, Long> {
+public interface MenuRepository extends JpaRepository<Menu, String> {
 
     @NotNull
     List<Menu> findAll();
+    List<Menu> findByName(String name);
+    List<Menu> findByType(String type);
 }

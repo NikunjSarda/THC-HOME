@@ -40,8 +40,8 @@ public class MenuController {
                 .build();
     }
 
-    @GetMapping(value = "/Menu/{id}", produces = "application/json")
-    @ApiOperation(value = "Create a Menu",
+    @GetMapping(value = "/MenuById/{id}", produces = "application/json")
+    @ApiOperation(value = "Get a Menu",
             notes = "provide necessary details")
     @ApiResponses(value= {
             @ApiResponse(code = 201, message = "FOUND"),
@@ -57,7 +57,7 @@ public class MenuController {
                 .build();
     }
 
-    @GetMapping(value = "/Menu/{name}", produces = "application/json")
+    @GetMapping(value = "/MenuByName/{name}", produces = "application/json")
     @ApiOperation(value = "Get Menu by name",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -74,7 +74,7 @@ public class MenuController {
                 .build();
     }
 
-    @GetMapping(value = "/Menu/{type}", produces = "application/json")
+    @GetMapping(value = "/MenuByType/{type}", produces = "application/json")
     @ApiOperation(value = "Get Menu by Type",
             notes = "provide necessary details")
     @ApiResponses(value= {
@@ -124,7 +124,7 @@ public class MenuController {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<String> createUpdate(@PathVariable(name = "id") String id, @RequestBody MenuDTO menu){
+    public Response<String> updateMenu(@PathVariable(name = "id") String id, @RequestBody MenuDTO menu){
         return menuServices.updateMenu(id, menu) == Boolean.TRUE ?
                 Response.<String>builder()
                         .meta(ResponseMetaData.builder()
