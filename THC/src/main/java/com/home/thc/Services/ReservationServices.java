@@ -5,6 +5,7 @@ import com.home.thc.Exception.ReservationException;
 import com.home.thc.Model.Reservation;
 import com.home.thc.Repository.ReservationsRepository;
 import com.home.thc.Services.Interface.ReservationInterface;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Log4j2
 public class ReservationServices implements ReservationInterface {
 
     ReservationsRepository reservationsRepo;
@@ -24,6 +26,7 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public List<Reservation> getAllReservations() {
+        log.info("Getting all Reservation");
         List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findAll());
         if (reservationList.isEmpty()) {
             throw new EmptyStackException();
@@ -44,6 +47,7 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public Boolean createReservation(ReservationDTO reservationDTO) {
+        log.info("Creating new Reservation");
         Reservation reservation = new Reservation();
         BeanUtils.copyProperties(reservationDTO, reservation);
         reservationsRepo.save(reservation);

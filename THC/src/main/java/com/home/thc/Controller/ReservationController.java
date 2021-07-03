@@ -32,6 +32,7 @@ public class ReservationController {
             @ApiResponse(code = 200, message = "OK")
     })
     public Response<List<Reservation>> listAllReservation(){
+        log.info("Getting all reservations");
         return Response.<List<Reservation>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)

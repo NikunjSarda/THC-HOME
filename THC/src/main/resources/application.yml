@@ -36,3 +36,8 @@ spring:
     active: local
   application:
     name: THC
+
+#logging
+logging:
+  file:
+    name: THC/logs/application.log
