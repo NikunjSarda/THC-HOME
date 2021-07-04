@@ -35,7 +35,7 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Menu getMenuById(String id) {
-        return menuRepo.findById(id).orElseThrow(() -> new MenuException(id));
+        return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Boolean updateMenu(String id, MenuDTO menuDTO) {
-        Optional<Menu> menu = menuRepo.findById(id);
+        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
         if(menu.isEmpty()) {
             throw new MenuException(id);
         }
@@ -76,7 +76,7 @@ public class MenuServices implements MenuInterface {
 
     @Override
     public Boolean deleteMenu(String id) {
-        Optional<Menu> menu = menuRepo.findById(id);
+        Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
         if(menu.isEmpty()) {
             throw new MenuException(id);
         }

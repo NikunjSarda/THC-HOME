@@ -19,7 +19,6 @@ import java.sql.Date;
 public class Reservation implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "date")

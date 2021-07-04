@@ -17,8 +17,7 @@ import java.io.Serializable;
 public class Menu implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private long id;
 
     @Column(name = "name")
     private String name;

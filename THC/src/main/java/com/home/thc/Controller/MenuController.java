@@ -166,8 +166,8 @@ public class MenuController {
                         .build();
     }
 
-    @DeleteMapping(value = "/OpenHoursDeleteAll/")
-    @ApiOperation(value = "Delete all Open Hours",
+    @DeleteMapping(value = "/MenusDeleteAll/")
+    @ApiOperation(value = "Delete all Menus",
             notes = "provide necessary details")
     @ApiResponses(value= {
             @ApiResponse(code = 201, message = "CREATED"),

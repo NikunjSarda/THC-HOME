@@ -17,7 +17,6 @@ import java.io.Serializable;
 public class Location implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "name")

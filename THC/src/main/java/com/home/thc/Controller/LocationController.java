@@ -151,7 +151,7 @@ public class LocationController {
     }
 
     @DeleteMapping(value = "/LocationsDeleteAll/")
-    @ApiOperation(value = "Delete all Open Hours",
+    @ApiOperation(value = "Delete all locations",
             notes = "provide necessary details")
     @ApiResponses(value= {
             @ApiResponse(code = 201, message = "CREATED"),
