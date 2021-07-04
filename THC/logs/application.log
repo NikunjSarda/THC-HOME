@@ -2664,3 +2664,91 @@ Using generated security password: 93187a01-98ec-42f3-82f7-08243e19de72
 2021-07-04 10:36:57,255 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 1
 2021-07-04 10:37:11,321 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/MenuCreate
 2021-07-04 10:37:11,322 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 80
+2021-07-04 10:38:58,193 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 15000 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-04 10:38:58,197 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-04 10:38:59,514 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 10:38:59,514 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-04 10:38:59,553 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 10:38:59,556 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 10:38:59,558 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 10:38:59,568 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 10:38:59,571 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 10:38:59,572 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 0 JDBC repository interfaces.
+2021-07-04 10:38:59,587 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 10:38:59,588 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-04 10:38:59,641 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2021-07-04 10:39:00,245 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:39:00,255 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-04 10:39:00,255 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:39:00,426 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-04 10:39:00,427 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2182 ms
+2021-07-04 10:39:00,747 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-04 10:39:00,789 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-04 10:39:00,906 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-04 10:39:01,004 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-04 10:39:01,277 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-04 10:39:01,297 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-04 10:39:02,094 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-04 10:39:02,104 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-04 10:39:02,465 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-04 10:39:02,977 INFO  [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-04 10:39:03,033 INFO  [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-04 10:39:03,443 INFO  [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 262f4dbd-a7d1-42c0-a7fd-dfbf23168576
+
+2021-07-04 10:39:03,502 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@394c77e2, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a917e07, org.springframework.security.web.header.HeaderWriterFilter@331fe6d4, org.springframework.security.web.authentication.logout.LogoutFilter@81f9b01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6edd80fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23f16852, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20dfe8b2, org.springframework.security.web.session.SessionManagementFilter@3397c8c0, org.springframework.security.web.access.ExceptionTranslationFilter@4c2812aa]
+2021-07-04 10:39:03,597 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-07-04 10:39:03,598 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-04 10:39:03,621 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-04 10:39:03,647 INFO  [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner : Scanning for api listing references
+2021-07-04 10:39:03,829 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_1
+2021-07-04 10:39:03,872 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_2
+2021-07-04 10:39:03,904 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_3
+2021-07-04 10:39:03,953 INFO  [main] com.home.thc.THCApplication : Started THCApplication in 6.223 seconds (JVM running for 7.149)
+2021-07-04 10:39:04,275 INFO  [RMI TCP Connection(2)-192.168.56.1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:39:04,275 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:39:04,276 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2021-07-04 10:39:07,991 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-ui.html
+2021-07-04 10:39:07,992 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 21
+2021-07-04 10:39:08,118 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.css
+2021-07-04 10:39:08,119 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-04 10:39:08,121 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui.css
+2021-07-04 10:39:08,121 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 6
+2021-07-04 10:39:08,124 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.js
+2021-07-04 10:39:08,125 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 7
+2021-07-04 10:39:08,132 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2021-07-04 10:39:08,132 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 15
+2021-07-04 10:39:08,145 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2021-07-04 10:39:08,145 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 29
+2021-07-04 10:39:08,443 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/ui
+2021-07-04 10:39:08,444 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 35
+2021-07-04 10:39:08,462 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/security
+2021-07-04 10:39:08,462 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 5
+2021-07-04 10:39:08,478 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources
+2021-07-04 10:39:08,478 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-04 10:39:08,527 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/
+2021-07-04 10:39:08,528 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 0
+2021-07-04 10:39:08,543 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-04 10:39:08,543 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-04 10:39:08,567 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/csrf
+2021-07-04 10:39:08,567 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-04 10:39:08,575 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-04 10:39:08,575 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 2
+2021-07-04 10:39:51,800 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/LocationCreate
+2021-07-04 10:39:51,801 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 70
+2021-07-04 10:39:51,845 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2021-07-04 10:39:51,846 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 2
+2021-07-04 10:41:06,353 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/OpenHoursCreate
+2021-07-04 10:41:06,353 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 29
+2021-07-04 10:42:29,865 INFO  [http-nio-8080-exec-10] com.home.thc.Services.ReservationServices : Creating new Reservation
+2021-07-04 10:42:29,897 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/ReservationCreate
+2021-07-04 10:42:29,898 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 41
+2021-07-04 10:42:42,624 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/ReservationList/1
+2021-07-04 10:42:42,625 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 133
+2021-07-04 10:43:03,046 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/OpenHours/1
+2021-07-04 10:43:03,046 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-04 10:43:18,103 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/OpenHoursList
+2021-07-04 10:43:18,103 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 15
+2021-07-04 10:46:04,494 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-04 10:46:04,495 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 28
