@@ -21,6 +21,9 @@ public class OpenHours implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "day")
+    private String day;
+
     @Column(name = "start_time")
     private String startTime;
 

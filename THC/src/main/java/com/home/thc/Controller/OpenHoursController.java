@@ -26,7 +26,7 @@ public class OpenHoursController {
 
     @GetMapping(value = "/OpenHoursList", produces = "application/json")
     @ApiOperation(value = "Getting all open hours",
-            notes = "Returns all reservation")
+            notes = "Returns all Open Hours")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
@@ -63,6 +63,81 @@ public class OpenHoursController {
                                 .statusCode(200)
                                 .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
                         .data("Location Not Created")
+                        .build();
+    }
+
+    @PutMapping(value = "/OpenHours/{id}", consumes = "application/json", produces = "application/json")
+    @ApiOperation(value = "Update a Open Hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> updateOpenHours(@PathVariable(name = "id") String id, @RequestBody OpenHoursDTO openHoursDTO){
+        return openHoursServices.updateOpenHours(id, openHoursDTO) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Open Hours Updated")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Open Hours Not Updated")
+                        .build();
+    }
+
+    @DeleteMapping(value = "/OpenHoursDelete/{id}")
+    @ApiOperation(value = "Delete a Open Hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> deleteOpenHours(@PathVariable(name = "id") String id){
+        return openHoursServices.deleteOpenHours(id) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Open Hours deleted")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Open Hours Not deleted")
+                        .build();
+    }
+
+    @DeleteMapping(value = "/OpenHoursDeleteAll/")
+    @ApiOperation(value = "Delete all Open Hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> deleteAll(){
+        return openHoursServices.deleteAll() == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Open Hours deleted")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Open Hours Not deleted")
                         .build();
     }
 }

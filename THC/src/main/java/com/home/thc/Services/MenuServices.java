@@ -84,5 +84,11 @@ public class MenuServices implements MenuInterface {
         return Boolean.TRUE;
     }
 
+    @Override
+    public Boolean deleteAll() {
+        menuRepo.deleteAll();
+        return Boolean.TRUE;
+    }
+
 
 }

@@ -77,4 +77,10 @@ public class LocationServices implements LocationInterface {
         locationRepo.delete(location.get());
         return Boolean.TRUE;
     }
+
+    @Override
+    public Boolean deleteAll() {
+        locationRepo.deleteAll();
+        return Boolean.TRUE;
+    }
 }

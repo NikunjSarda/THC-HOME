@@ -41,6 +41,22 @@ public class ReservationController {
                 .build();
     }
 
+    @GetMapping(value = "/ReservationList/{locationId}", produces = "application/json")
+    @ApiOperation(value = "Getting all reservation",
+            notes = "Returns all reservation")
+    @ApiResponses(value= {
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<List<Reservation>> getReservationsByLocationId(@PathVariable(name = "locationId") String locationId){
+        return Response.<List<Reservation>>builder()
+                .meta(ResponseMetaData.builder()
+                        .statusCode(200)
+                        .statusMessage(StatusMessage.SUCCESS.name()).build())
+                .data((reservationServices.getReservationByLocationId(locationId)))
+                .build();
+    }
+
     @GetMapping(value = "/CustomerReservation/{customerEmailId}", produces = "application/json")
     @ApiOperation(value = "Getting all reservation",
             notes = "Returns all reservation")

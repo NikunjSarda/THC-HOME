@@ -165,4 +165,29 @@ public class MenuController {
                         .data("Menu Not deleted")
                         .build();
     }
+
+    @DeleteMapping(value = "/OpenHoursDeleteAll/")
+    @ApiOperation(value = "Delete all Open Hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> deleteAll(){
+        return menuServices.deleteAll() == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Menus deleted")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Menus Not deleted")
+                        .build();
+    }
 }

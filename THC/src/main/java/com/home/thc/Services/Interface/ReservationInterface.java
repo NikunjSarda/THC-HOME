@@ -9,7 +9,7 @@ public interface ReservationInterface {
 
     List<Reservation> getAllReservations();
     Reservation getReservationByCustomerEmailId(String id);
-//    List<Reservation> getReservationByLocation(String id);
+    List<Reservation> getReservationByLocationId(String id);
     Boolean createReservation(ReservationDTO reservation);
     Boolean updateReservation(String id, ReservationDTO menu);
     Boolean deleteReservation(String id);

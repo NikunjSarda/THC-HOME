@@ -37,4 +37,8 @@ public class Reservation implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JsonManagedReference
     private Customer customer;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Location location;
 }

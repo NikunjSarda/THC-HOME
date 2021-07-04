@@ -149,4 +149,29 @@ public class LocationController {
                         .data("location Not deleted")
                         .build();
     }
+
+    @DeleteMapping(value = "/LocationsDeleteAll/")
+    @ApiOperation(value = "Delete all Open Hours",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> deleteAll(){
+        return locationServices.deleteAll() == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Locations deleted")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("locations Not deleted")
+                        .build();
+    }
 }

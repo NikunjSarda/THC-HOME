@@ -30,4 +30,5 @@ public class ReservationDTO implements Serializable {
     private int guests;
 
     private CustomerDTO customer;
+    private LocationDTO location;
 }

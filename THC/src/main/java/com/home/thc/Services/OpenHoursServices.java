@@ -46,4 +46,21 @@ public class OpenHoursServices implements OpenHoursInterface {
         openHoursRepo.save(openHours);
         return Boolean.TRUE;
     }
+
+    @Override
+    public Boolean updateOpenHours(String id, OpenHoursDTO openHoursDTO) {
+        return null;
+    }
+
+    @Override
+    public Boolean deleteOpenHours(String id) {
+        return null;
+    }
+
+    @Override
+    public Boolean deleteAll() {
+        openHoursRepo.deleteAll();
+        return Boolean.TRUE;
+    }
+
 }

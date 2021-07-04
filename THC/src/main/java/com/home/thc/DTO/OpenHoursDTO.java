@@ -17,6 +17,8 @@ import java.io.Serializable;
 public class OpenHoursDTO implements Serializable {
 
     private long id;
+    @JsonProperty(value = "day")
+    private String day;
     @JsonProperty(value = "startTime")
     private String startTime;
     @JsonProperty(value = "endTime")

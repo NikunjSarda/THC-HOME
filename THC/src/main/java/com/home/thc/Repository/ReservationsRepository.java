@@ -14,5 +14,5 @@ public interface ReservationsRepository extends JpaRepository<Reservation, Long>
     @NotNull
     List<Reservation> findAll();
     Reservation findReservationByCustomerEmailId(String customerEmailId);
-
+    List<Reservation> findReservationByLocationId(long id);
 }

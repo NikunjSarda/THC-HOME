@@ -1162,3 +1162,145 @@ Using generated security password: 422a6e26-0e76-4b76-91cd-eccdf9812e6f
 2021-07-04 05:18:31,951 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
 2021-07-04 05:18:37,813 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/ReservationDeleteAll/
 2021-07-04 05:18:37,814 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 160
+2021-07-04 07:16:22,305 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 8196 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-04 07:16:22,351 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-04 07:16:24,070 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 07:16:24,072 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-04 07:16:24,119 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:16:24,122 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:16:24,125 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:16:24,127 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:16:24,138 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:16:24,139 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 0 JDBC repository interfaces.
+2021-07-04 07:16:24,156 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 07:16:24,157 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-04 07:16:24,235 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 5 JPA repository interfaces.
+2021-07-04 07:16:25,208 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-04 07:16:25,225 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-04 07:16:25,226 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 07:16:25,560 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-04 07:16:25,560 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3145 ms
+2021-07-04 07:16:26,023 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-04 07:16:26,101 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-04 07:16:26,351 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-04 07:16:26,511 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-04 07:16:26,960 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-04 07:16:26,992 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-04 07:16:28,314 ERROR [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [day] in table [open_hours]
+2021-07-04 07:16:28,315 WARN  [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [day] in table [open_hours]
+2021-07-04 07:16:28,315 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-07-04 07:16:28,318 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-07-04 07:16:28,321 INFO  [main] org.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2021-07-04 07:16:28,340 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-04 07:16:28,368 ERROR [main] org.springframework.boot.SpringApplication : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [day] in table [open_hours]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.home.thc.THCApplication.main(THCApplication.java:12)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [day] in table [open_hours]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [day] in table [open_hours]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:136)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+2021-07-04 07:17:39,736 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 7632 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-04 07:17:39,738 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-04 07:17:41,206 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 07:17:41,207 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-04 07:17:41,251 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:17:41,254 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:17:41,255 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:17:41,258 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:17:41,271 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-04 07:17:41,273 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 0 JDBC repository interfaces.
+2021-07-04 07:17:41,288 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-04 07:17:41,289 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-04 07:17:41,360 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2021-07-04 07:17:42,049 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-04 07:17:42,059 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-04 07:17:42,059 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 07:17:42,270 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-04 07:17:42,270 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2477 ms
+2021-07-04 07:17:42,658 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-04 07:17:42,708 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-04 07:17:42,851 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-04 07:17:42,987 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-04 07:17:43,296 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-04 07:17:43,321 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-04 07:17:44,325 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-04 07:17:44,335 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-04 07:17:44,703 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-04 07:17:45,284 INFO  [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-04 07:17:45,357 INFO  [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-04 07:17:45,840 INFO  [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 20d02478-6d01-4009-9851-6195729065d3
+
+2021-07-04 07:17:45,920 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4eb43d2f, org.springframework.security.web.context.SecurityContextPersistenceFilter@56a63c28, org.springframework.security.web.header.HeaderWriterFilter@5a0c0680, org.springframework.security.web.authentication.logout.LogoutFilter@27b9d5b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ce5013a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a917e07, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@453961d7, org.springframework.security.web.session.SessionManagementFilter@555454c7, org.springframework.security.web.access.ExceptionTranslationFilter@461e479c]
+2021-07-04 07:17:46,023 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-07-04 07:17:46,024 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-04 07:17:46,045 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-04 07:17:46,088 INFO  [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner : Scanning for api listing references
+2021-07-04 07:17:46,641 INFO  [main] com.home.thc.THCApplication : Started THCApplication in 7.433 seconds (JVM running for 8.319)
+2021-07-04 07:17:47,335 INFO  [RMI TCP Connection(2)-192.168.56.1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 07:17:47,336 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-07-04 07:17:47,340 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 4 ms
+2021-07-04 07:18:08,833 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-ui.html
+2021-07-04 07:18:08,835 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 36
+2021-07-04 07:18:08,938 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.js
+2021-07-04 07:18:08,938 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 8
+2021-07-04 07:18:08,938 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui.css
+2021-07-04 07:18:08,938 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 8
+2021-07-04 07:18:08,954 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2021-07-04 07:18:08,956 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 24
+2021-07-04 07:18:08,969 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.css
+2021-07-04 07:18:08,970 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 6
+2021-07-04 07:18:08,981 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2021-07-04 07:18:08,981 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 51
+2021-07-04 07:18:09,389 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/ui
+2021-07-04 07:18:09,390 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 77
+2021-07-04 07:18:09,418 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/favicon-16x16.png
+2021-07-04 07:18:09,419 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 5
+2021-07-04 07:18:09,431 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/security
+2021-07-04 07:18:09,433 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 14
+2021-07-04 07:18:09,473 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources
+2021-07-04 07:18:09,473 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 9
+2021-07-04 07:18:09,587 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/
+2021-07-04 07:18:09,587 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 1
+2021-07-04 07:18:09,624 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-04 07:18:09,624 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 10
+2021-07-04 07:18:09,635 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/csrf
+2021-07-04 07:18:09,635 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-04 07:18:09,645 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-04 07:18:09,646 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 1

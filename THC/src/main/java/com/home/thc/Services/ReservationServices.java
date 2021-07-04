@@ -3,6 +3,7 @@ package com.home.thc.Services;
 import com.home.thc.DTO.ReservationDTO;
 import com.home.thc.Exception.ReservationException;
 import com.home.thc.Model.Customer;
+import com.home.thc.Model.Location;
 import com.home.thc.Model.Reservation;
 import com.home.thc.Repository.ReservationsRepository;
 import com.home.thc.Services.Interface.ReservationInterface;
@@ -40,20 +41,26 @@ public class ReservationServices implements ReservationInterface {
         return reservationsRepo.findReservationByCustomerEmailId(id);
     }
 
-//    @Override
-//    public List<Reservation> getReservationByLocation(String id) {
-//        //TODO
-//        return null;
-//    }
+    @Override
+    public List<Reservation> getReservationByLocationId(String id) {
+        List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findReservationByLocationId(Long.parseLong(id)));
+        if (reservationList.isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return reservationList;
+    }
 
     @Override
     public Boolean createReservation(ReservationDTO reservationDTO) {
         log.info("Creating new Reservation");
         Reservation reservation = new Reservation();
         Customer customer = new Customer();
+        Location location = new Location();
         BeanUtils.copyProperties(reservationDTO.getCustomer(), customer);
+        BeanUtils.copyProperties(reservationDTO.getLocation(), location);
         BeanUtils.copyProperties(reservationDTO, reservation);
         reservation.setCustomer(customer);
+        reservation.setLocation(location);
         reservationsRepo.save(reservation);
         return Boolean.TRUE;
     }
