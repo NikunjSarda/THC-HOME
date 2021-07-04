@@ -41,19 +41,19 @@ public class ReservationController {
                 .build();
     }
 
-    @GetMapping(value = "/CustomerReservation/{customerId}", produces = "application/json")
+    @GetMapping(value = "/CustomerReservation/{customerEmailId}", produces = "application/json")
     @ApiOperation(value = "Getting all reservation",
             notes = "Returns all reservation")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<Reservation> customerReservation(@PathVariable(name = "customerId") String customerId){
+    public Response<Reservation> getCustomerReservationByEmailId(@PathVariable(name = "customerEmailId") String customerEmailId){
         return Response.<Reservation>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((reservationServices.getReservationById(customerId)))
+                .data((reservationServices.getReservationByCustomerEmailId(customerEmailId)))
                 .build();
     }
 
@@ -117,6 +117,31 @@ public class ReservationController {
     })
     public Response<String> deleteReservation(@PathVariable(name = "id") String id){
         return reservationServices.deleteReservation(id) == Boolean.TRUE ?
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.SUCCESS.name()).build())
+                        .data("Reservation deleted")
+                        .build()
+                :
+                Response.<String>builder()
+                        .meta(ResponseMetaData.builder()
+                                .statusCode(200)
+                                .statusMessage(StatusMessage.UNKNOWN_INTERNAL_ERROR.name()).build())
+                        .data("Reservation Not deleted")
+                        .build();
+    }
+
+    @DeleteMapping(value = "/ReservationDeleteAll/")
+    @ApiOperation(value = "Delete all Reservation",
+            notes = "provide necessary details")
+    @ApiResponses(value= {
+            @ApiResponse(code = 201, message = "CREATED"),
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<String> deleteAll(){
+        return reservationServices.deleteAll() == Boolean.TRUE ?
                 Response.<String>builder()
                         .meta(ResponseMetaData.builder()
                                 .statusCode(200)

@@ -2,6 +2,7 @@ package com.home.thc.Services;
 
 import com.home.thc.DTO.ReservationDTO;
 import com.home.thc.Exception.ReservationException;
+import com.home.thc.Model.Customer;
 import com.home.thc.Model.Reservation;
 import com.home.thc.Repository.ReservationsRepository;
 import com.home.thc.Services.Interface.ReservationInterface;
@@ -35,8 +36,8 @@ public class ReservationServices implements ReservationInterface {
     }
 
     @Override
-    public Reservation getReservationById(String id) {
-        return reservationsRepo.findByCustomerId(id);
+    public Reservation getReservationByCustomerEmailId(String id) {
+        return reservationsRepo.findReservationByCustomerEmailId(id);
     }
 
 //    @Override
@@ -49,14 +50,17 @@ public class ReservationServices implements ReservationInterface {
     public Boolean createReservation(ReservationDTO reservationDTO) {
         log.info("Creating new Reservation");
         Reservation reservation = new Reservation();
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(reservationDTO.getCustomer(), customer);
         BeanUtils.copyProperties(reservationDTO, reservation);
+        reservation.setCustomer(customer);
         reservationsRepo.save(reservation);
         return Boolean.TRUE;
     }
 
     @Override
     public Boolean updateReservation(String id, ReservationDTO reservationDTO) {
-        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findByCustomerId(id));
+        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findReservationByCustomerEmailId(id));
         if(reservation.isEmpty()) {
             throw new ReservationException(id);
         }
@@ -67,11 +71,17 @@ public class ReservationServices implements ReservationInterface {
 
     @Override
     public Boolean deleteReservation(String id) {
-        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findByCustomerId(id));
+        Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findReservationByCustomerEmailId(id));
         if(reservation.isEmpty()) {
             throw new ReservationException(id);
         }
         reservationsRepo.delete(reservation.get());
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean deleteAll() {
+        reservationsRepo.deleteAll();
         return Boolean.TRUE;
     }
 }
