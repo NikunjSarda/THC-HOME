@@ -20,7 +20,7 @@ public class SwaggerConfiguration {
      * URL - http://localhost:8080/api/swagger-ui.html
      * */
     @Bean
-    public Docket swaggerConfig(){
+    public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(getApiInfo())
                 .select()
