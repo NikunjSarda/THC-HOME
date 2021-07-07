@@ -9,9 +9,9 @@ services:
     depends_on:
       - sql-server-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:sqlserver://localhost/thc
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://192.168.144.231/thc
       - SPRING_DATASOURCE_USERNAME=sa
-      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_PASSWORD=Root@123
 
   sql-server-db:
     image: 'mcr.microsoft.com/mssql/server:2019-latest'

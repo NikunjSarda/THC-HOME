@@ -18,6 +18,7 @@ import java.io.Serializable;
 public class OpenHours implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "day")

@@ -22,13 +22,13 @@ management:
 # Spring configurations
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost;databaseName = THC
+    url: jdbc:sqlserver://192.168.144.231;databaseName = THC
     username: sa
-    password: root
+    password: Root@123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
       dialect: org.hibernate.dialect.MySQLInnoDBDialect
     show-sql: true
     generate-ddl: true
