@@ -29,7 +29,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-      dialect: org.hibernate.dialect.MySQL5Dialect
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
     show-sql: true
     generate-ddl: true
   profiles:
