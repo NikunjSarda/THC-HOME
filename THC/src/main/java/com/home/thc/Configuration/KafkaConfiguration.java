@@ -1,6 +1,6 @@
 package com.home.thc.Configuration;
 
-import com.home.thc.Model.User;
+import com.home.thc.DTO.ReservationStreamDTO;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
@@ -17,19 +17,20 @@ import java.util.Map;
 public class KafkaConfiguration {
 
     @Bean
-    public ProducerFactory<String, User> producerFactory() {
+    public ProducerFactory<String, ReservationStreamDTO> producerFactory() {
         Map<String, Object> config = new HashMap<>();
 
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        config.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "THCTansId");
 
         return new DefaultKafkaProducerFactory<>(config);
     }
 
 
     @Bean
-    public KafkaTemplate<String, User> kafkaTemplate() {
+    public KafkaTemplate<String, ReservationStreamDTO> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 

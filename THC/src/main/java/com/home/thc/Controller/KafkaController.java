@@ -1,27 +1,26 @@
 package com.home.thc.Controller;
 
+import com.home.thc.DTO.ReservationDTO;
+import com.home.thc.DTO.ReservationStreamDTO;
 import com.home.thc.Model.User;
+import com.home.thc.Services.ProducerServices;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("kafka")
 public class KafkaController {
 
-    private final KafkaTemplate<String, User> kafkaTemplate;
+    ProducerServices producerServices;
 
-    private static final String TOPIC = "Kafka_Example";
-
-    public KafkaController(KafkaTemplate<String, User> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
+    public KafkaController(ProducerServices producerServices) {
+        this.producerServices = producerServices;
     }
 
-    @GetMapping("/publish/{name}")
-    public String post(@PathVariable("name") final String name) {
-        kafkaTemplate.send(TOPIC, new User(name, "Technology"));
+    @PostMapping("/publish/loaction/reservations")
+    public String post(@RequestBody ReservationStreamDTO reservationStreamDTO) {
+        ReservationDTO reservationDTO = reservationStreamDTO.getReservationDTO();
+        producerServices.sentReservationLists(reservationStreamDTO);
         return "Published successfully";
     }
 }
