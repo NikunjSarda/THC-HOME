@@ -43,3 +43,196 @@ Using generated security password: cd460c7b-e8b1-434b-b62d-4545970b68b1
 2021-07-07 02:13:14,350 INFO  [RMI TCP Connection(4)-172.20.224.1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-07-07 02:13:14,350 INFO  [RMI TCP Connection(4)-172.20.224.1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
 2021-07-07 02:13:14,354 INFO  [RMI TCP Connection(4)-172.20.224.1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 4 ms
+2021-07-07 03:31:46,008 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 14144 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-07 03:31:46,019 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-07 03:31:47,236 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:31:47,236 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-07 03:31:47,273 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:31:47,275 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:31:47,276 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:31:47,286 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:31:47,288 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:31:47,289 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 JDBC repository interfaces.
+2021-07-07 03:31:47,302 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:31:47,303 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-07 03:31:47,360 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+2021-07-07 03:31:47,968 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-07 03:31:47,975 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-07 03:31:47,976 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-07 03:31:48,122 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-07 03:31:48,122 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2047 ms
+2021-07-07 03:31:48,485 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-07 03:31:48,540 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-07 03:31:48,676 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-07 03:31:48,782 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-07 03:31:49,084 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-07 03:31:49,105 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-07 03:31:49,976 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-07 03:31:49,984 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-07 03:31:50,319 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-07 03:31:50,352 WARN  [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaController' defined in file [E:\Egen\Finale\THC-HOME\THC\build\classes\java\main\com\home\thc\Controller\KafkaController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, com.home.thc.DTO.ReservationDTO>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-07-07 03:31:50,353 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-07 03:31:50,354 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-07-07 03:31:50,357 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-07-07 03:31:50,359 INFO  [main] org.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2021-07-07 03:31:50,376 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-07 03:31:50,395 ERROR [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.home.thc.Controller.KafkaController required a bean of type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' in your configuration.
+
+2021-07-07 03:33:25,298 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 16108 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-07 03:33:25,300 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-07 03:33:26,475 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:33:26,476 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-07 03:33:26,508 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:33:26,510 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:33:26,520 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:33:26,523 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:33:26,524 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:33:26,525 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 0 JDBC repository interfaces.
+2021-07-07 03:33:26,541 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:33:26,541 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-07 03:33:26,596 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2021-07-07 03:33:27,189 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-07 03:33:27,197 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-07 03:33:27,197 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-07 03:33:27,356 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-07 03:33:27,356 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2003 ms
+2021-07-07 03:33:27,716 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-07 03:33:27,763 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-07 03:33:27,886 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-07 03:33:27,986 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-07 03:33:28,243 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-07 03:33:28,267 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-07 03:33:29,129 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-07 03:33:29,137 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-07 03:33:29,463 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-07 03:33:29,494 WARN  [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaController' defined in file [E:\Egen\Finale\THC-HOME\THC\build\classes\java\main\com\home\thc\Controller\KafkaController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, com.home.thc.DTO.ReservationDTO>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-07-07 03:33:29,495 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-07 03:33:29,497 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2021-07-07 03:33:29,500 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2021-07-07 03:33:29,502 INFO  [main] org.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2021-07-07 03:33:29,517 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-07 03:33:29,534 ERROR [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.home.thc.Controller.KafkaController required a bean of type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' in your configuration.
+
+2021-07-07 03:35:11,058 INFO  [main] com.home.thc.THCApplication : Starting THCApplication using Java 16.0.1 on DESKTOP-PB1MEOI with PID 15644 (E:\Egen\Finale\THC-HOME\THC\build\classes\java\main started by nikun in E:\Egen\Finale\THC-HOME)
+2021-07-07 03:35:11,061 INFO  [main] com.home.thc.THCApplication : The following profiles are active: local
+2021-07-07 03:35:12,533 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:35:12,534 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-07 03:35:12,579 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.InterceptorRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:35:12,583 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.LocationRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:35:12,587 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.MenuRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:35:12,599 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.OpenHoursRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:35:12,603 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.home.thc.Repository.ReservationsRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-07 03:35:12,604 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 0 JDBC repository interfaces.
+2021-07-07 03:35:12,620 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-07 03:35:12,621 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-07 03:35:12,688 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2021-07-07 03:35:13,338 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2021-07-07 03:35:13,346 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2021-07-07 03:35:13,347 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-07 03:35:13,523 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring embedded WebApplicationContext
+2021-07-07 03:35:13,523 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2405 ms
+2021-07-07 03:35:13,879 INFO  [main] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-07 03:35:13,938 INFO  [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-07 03:35:14,059 INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-07 03:35:14,158 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2021-07-07 03:35:14,440 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2021-07-07 03:35:14,462 INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-07-07 03:35:15,321 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-07 03:35:15,330 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-07 03:35:15,642 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-07 03:35:16,144 INFO  [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-07 03:35:16,210 INFO  [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-07-07 03:35:16,712 INFO  [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1d96d28f-3d9c-44fa-8988-9a6a59e3f8ee
+
+2021-07-07 03:35:16,784 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35fddea2, org.springframework.security.web.context.SecurityContextPersistenceFilter@27b9d5b7, org.springframework.security.web.header.HeaderWriterFilter@7bbab46e, org.springframework.security.web.authentication.logout.LogoutFilter@5a438c0a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@490b8f1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@81f9b01, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f876114, org.springframework.security.web.session.SessionManagementFilter@3e92bded, org.springframework.security.web.access.ExceptionTranslationFilter@3e7935f1]
+2021-07-07 03:35:16,884 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-07-07 03:35:16,885 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Context refreshed
+2021-07-07 03:35:16,905 INFO  [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-07-07 03:35:16,946 INFO  [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner : Scanning for api listing references
+2021-07-07 03:35:17,145 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_1
+2021-07-07 03:35:17,193 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_2
+2021-07-07 03:35:17,224 INFO  [main] springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteAllUsingDELETE_3
+2021-07-07 03:35:17,277 INFO  [main] com.home.thc.THCApplication : Started THCApplication in 6.755 seconds (JVM running for 7.667)
+2021-07-07 03:35:17,634 INFO  [RMI TCP Connection(2)-192.168.56.1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/api] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-07 03:35:17,634 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2021-07-07 03:35:17,636 INFO  [RMI TCP Connection(2)-192.168.56.1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 2 ms
+2021-07-07 03:35:20,188 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-ui.html
+2021-07-07 03:35:20,189 INFO  [http-nio-8080-exec-1] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 21
+2021-07-07 03:35:20,340 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.css
+2021-07-07 03:35:20,340 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-07 03:35:20,347 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui.css
+2021-07-07 03:35:20,347 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 10
+2021-07-07 03:35:20,349 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/springfox.js
+2021-07-07 03:35:20,349 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 10
+2021-07-07 03:35:20,356 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2021-07-07 03:35:20,357 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 17
+2021-07-07 03:35:20,372 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2021-07-07 03:35:20,372 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 35
+2021-07-07 03:35:20,661 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/ui
+2021-07-07 03:35:20,662 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 41
+2021-07-07 03:35:20,673 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/favicon-16x16.png
+2021-07-07 03:35:20,674 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-07 03:35:20,683 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources/configuration/security
+2021-07-07 03:35:20,684 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 8
+2021-07-07 03:35:20,704 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/swagger-resources
+2021-07-07 03:35:20,704 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-07 03:35:20,767 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/
+2021-07-07 03:35:20,768 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 0
+2021-07-07 03:35:20,771 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2
+2021-07-07 03:35:20,771 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2
+2021-07-07 03:35:20,771 INFO  [http-nio-8080-exec-3] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-07 03:35:20,771 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 4
+2021-07-07 03:35:20,788 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-07 03:35:20,788 INFO  [http-nio-8080-exec-2] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 7
+2021-07-07 03:35:20,817 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/csrf
+2021-07-07 03:35:20,818 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-07 03:35:20,826 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-07 03:35:20,826 INFO  [http-nio-8080-exec-5] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 2
+2021-07-07 03:35:21,078 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2
+2021-07-07 03:35:21,079 INFO  [http-nio-8080-exec-7] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 5
+2021-07-07 03:35:21,080 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2
+2021-07-07 03:35:21,080 INFO  [http-nio-8080-exec-4] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 7
+2021-07-07 03:35:29,135 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2
+2021-07-07 03:35:29,136 INFO  [http-nio-8080-exec-8] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-07 03:35:30,375 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2
+2021-07-07 03:35:30,376 INFO  [http-nio-8080-exec-9] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 2
+2021-07-07 03:35:34,029 WARN  [http-nio-8080-exec-10] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.sql.Date` from String "string": not a valid representation (error: Failed to parse Date value 'string': Cannot parse date "string": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.sql.Date` from String "string": not a valid representation (error: Failed to parse Date value 'string': Cannot parse date "string": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+ at [Source: (PushbackInputStream); line: 8, column: 11] (through reference chain: com.home.thc.DTO.ReservationDTO["date"])]
+2021-07-07 03:35:34,030 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/kafka/kafka/publish/reservations
+2021-07-07 03:35:34,030 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 37
+2021-07-07 03:35:34,038 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/error
+2021-07-07 03:35:34,038 INFO  [http-nio-8080-exec-10] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 3
+2021-07-07 03:35:34,080 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Request URL: http://localhost:8080/api/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2021-07-07 03:35:34,081 INFO  [http-nio-8080-exec-6] com.home.thc.Interceptor.ExecutionTimeInterceptor : Total Time Taken: 2
