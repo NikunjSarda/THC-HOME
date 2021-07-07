@@ -24,19 +24,19 @@ public class MenuController {
         this.menuServices = menuServices;
     }
 
-    @GetMapping(value = "/MenuList", produces = "application/json")
+    @GetMapping(value = "/MenuList/{page}/{size}", produces = "application/json")
     @ApiOperation(value = "Getting all full menu",
             notes = "Returns full menu")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<List<Menu>> listAllMenu(){
+    public Response<List<Menu>> listAllMenu(@PathVariable(name = "page") int page, @PathVariable(name = "size") int size){
         return Response.<List<Menu>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((menuServices.getAllMenus()))
+                .data((menuServices.getAllMenus(page, size)))
                 .build();
     }
 

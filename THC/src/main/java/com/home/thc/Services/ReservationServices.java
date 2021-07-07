@@ -9,6 +9,9 @@ import com.home.thc.Repository.ReservationsRepository;
 import com.home.thc.Services.Interface.ReservationInterface;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,9 +30,10 @@ public class ReservationServices implements ReservationInterface {
     }
 
     @Override
-    public List<Reservation> getAllReservations() {
+    public List<Reservation> getAllReservations(int page, int size) {
         log.info("Getting all Reservation");
-        List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findAll());
+        Pageable pageable = PageRequest.of(page, size);
+        List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findAll(pageable).getContent());
         if (reservationList.isEmpty()) {
             throw new EmptyStackException();
         }

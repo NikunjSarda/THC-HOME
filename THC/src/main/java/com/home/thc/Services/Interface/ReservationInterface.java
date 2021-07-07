@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ReservationInterface {
 
-    List<Reservation> getAllReservations();
+    List<Reservation> getAllReservations(int page, int size);
     Reservation getReservationByCustomerEmailId(String id);
     List<Reservation> getReservationByLocationId(String id);
     Boolean createReservation(ReservationDTO reservation);

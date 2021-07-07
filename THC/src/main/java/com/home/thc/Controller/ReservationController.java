@@ -24,20 +24,20 @@ public class ReservationController {
         this.reservationServices = reservationServices;
     }
 
-    @GetMapping(value = "/ReservationList", produces = "application/json")
+    @GetMapping(value = "/ReservationList/{page}/{size}", produces = "application/json")
     @ApiOperation(value = "Getting all reservation",
             notes = "Returns all reservation")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<List<Reservation>> listAllReservation(){
+    public Response<List<Reservation>> listAllReservation(@PathVariable(name = "page") int page, @PathVariable(name = "size") int size){
         log.info("Getting all reservations");
         return Response.<List<Reservation>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((reservationServices.getAllReservations()))
+                .data((reservationServices.getAllReservations(page, size)))
                 .build();
     }
 

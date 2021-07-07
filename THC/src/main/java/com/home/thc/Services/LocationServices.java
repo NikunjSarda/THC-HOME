@@ -8,6 +8,8 @@ import com.home.thc.Repository.LocationRepository;
 import com.home.thc.Services.Interface.LocationInterface;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,9 +28,11 @@ public class LocationServices implements LocationInterface {
     }
 
     @Override
-    public List<Location> getAllLocation() {
+    public List<Location> getAllLocation(int page, int size) {
 
-        List<Location> locationList = new ArrayList<>(locationRepo.findAll());
+        Pageable pageable = PageRequest.of(page, size);
+
+        List<Location> locationList = new ArrayList<>(locationRepo.findAll(pageable).getContent());
         if (locationList.isEmpty()) {
             throw new EmptyStackException();
         }

@@ -7,6 +7,8 @@ import com.home.thc.Repository.OpenHoursRepository;
 import com.home.thc.Services.Interface.OpenHoursInterface;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,8 +25,10 @@ public class OpenHoursServices implements OpenHoursInterface {
         this.openHoursRepo = openHoursRepo;
     }
     @Override
-    public List<OpenHours> getAll() {
-        List<OpenHours> openHoursList = new ArrayList<>(openHoursRepo.findAll());
+    public List<OpenHours> getAll(int page, int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        List<OpenHours> openHoursList = new ArrayList<>(openHoursRepo.findAll(pageable).getContent());
         if (openHoursList.isEmpty()) {
             throw new EmptyStackException();
         }
@@ -32,7 +36,7 @@ public class OpenHoursServices implements OpenHoursInterface {
     }
 
     @Override
-    public List<OpenHours> findOpenHoursByLocation(String id) {
+    public List<OpenHours> getOpenHoursByLocation(String id) {
         return null;
     }
 

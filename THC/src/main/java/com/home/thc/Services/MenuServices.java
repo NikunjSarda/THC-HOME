@@ -6,6 +6,8 @@ import com.home.thc.Model.Menu;
 import com.home.thc.Repository.MenuRepository;
 import com.home.thc.Services.Interface.MenuInterface;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import lombok.extern.log4j.Log4j2;
 
@@ -25,8 +27,10 @@ public class MenuServices implements MenuInterface {
     }
 
     @Override
-    public List<Menu> getAllMenus() {
-        List<Menu> menuList = new ArrayList<>(menuRepo.findAll());
+    public List<Menu> getAllMenus(int page, int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        List<Menu> menuList = new ArrayList<>(menuRepo.findAll(pageable).getContent());
         if (menuList.isEmpty()) {
             throw new EmptyStackException();
         }

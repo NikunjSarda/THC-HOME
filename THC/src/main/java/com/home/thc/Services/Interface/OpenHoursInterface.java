@@ -9,8 +9,8 @@ import java.util.function.BooleanSupplier;
 
 public interface OpenHoursInterface {
 
-    List<OpenHours> getAll();
-    List<OpenHours> findOpenHoursByLocation(String id);
+    List<OpenHours> getAll(int page, int size);
+    List<OpenHours> getOpenHoursByLocation(String id);
     Boolean createOpenHours(OpenHoursDTO openHoursDTO);
     Boolean updateOpenHours(String id, OpenHoursDTO openHoursDTO);
     Boolean deleteOpenHours(String id);

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LocationInterface {
 
-    List<Location> getAllLocation();
+    List<Location> getAllLocation(int page, int size);
     Location getByLocationId(String id);
     List<Location> findByLocationName(String name);
     /*

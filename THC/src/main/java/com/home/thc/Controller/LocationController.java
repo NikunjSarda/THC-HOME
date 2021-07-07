@@ -10,7 +10,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,19 +24,19 @@ public class LocationController {
         this.locationServices = locationServices;
     }
 
-    @GetMapping(value = "/LocationList", produces = "application/json")
+    @GetMapping(value = "/LocationList/{page}/{size}", produces = "application/json")
     @ApiOperation(value = "Getting all Location",
             notes = "Returns every location")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<List<Location>> listAllLocation(){
+    public Response<List<Location>> listAllLocation(@PathVariable(name = "page") int page, @PathVariable(name = "size") int size){
         return Response.<List<Location>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((locationServices.getAllLocation()))
+                .data((locationServices.getAllLocation(page, size)))
                 .build();
     }
 
@@ -152,7 +151,7 @@ public class LocationController {
 
     @DeleteMapping(value = "/LocationsDeleteAll/")
     @ApiOperation(value = "Delete all locations",
-            notes = "provide necessary details")
+            notes = "database blank")
     @ApiResponses(value= {
             @ApiResponse(code = 201, message = "CREATED"),
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),

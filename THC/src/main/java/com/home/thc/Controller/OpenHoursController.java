@@ -24,19 +24,35 @@ public class OpenHoursController {
         this.openHoursServices = openHoursServices;
     }
 
-    @GetMapping(value = "/OpenHoursList", produces = "application/json")
+    @GetMapping(value = "/OpenHoursList/{page}/{size}", produces = "application/json")
     @ApiOperation(value = "Getting all open hours",
             notes = "Returns all Open Hours")
     @ApiResponses(value= {
             @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
             @ApiResponse(code = 200, message = "OK")
     })
-    public Response<List<OpenHours>> listAllOpenHours(){
+    public Response<List<OpenHours>> listAllOpenHours(@PathVariable(name = "page") int page, @PathVariable(name = "size") int size){
         return Response.<List<OpenHours>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)
                         .statusMessage(StatusMessage.SUCCESS.name()).build())
-                .data((openHoursServices.getAll()))
+                .data((openHoursServices.getAll(page, size)))
+                .build();
+    }
+
+    @GetMapping(value = "/OpenHoursListByLocation/{id}", produces = "application/json")
+    @ApiOperation(value = "Getting all open hours",
+            notes = "Returns all Open Hours")
+    @ApiResponses(value= {
+            @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR"),
+            @ApiResponse(code = 200, message = "OK")
+    })
+    public Response<List<OpenHours>> listAllOpenHoursByLocation(@PathVariable(name = "id") String id){
+        return Response.<List<OpenHours>>builder()
+                .meta(ResponseMetaData.builder()
+                        .statusCode(200)
+                        .statusMessage(StatusMessage.SUCCESS.name()).build())
+                .data((openHoursServices.getOpenHoursByLocation(id)))
                 .build();
     }
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MenuInterface {
 
-    List<Menu> getAllMenus();
+    List<Menu> getAllMenus(int page, int size);
     Menu getMenuById(String id);
     List<Menu> findByMenuName(String item);
     List<Menu> findByMenuType(String type);
