@@ -2,9 +2,9 @@ node {
     dir("E:\\test\\THC-HOME\\THC"){
         stage("Run THC") {
             try {
-                bat "docker-compose down"
-                bat "docker system prune"
-                bat "docker-compose up --build -d"
+//                 bat "docker-compose down"
+//                 bat "docker system prune"
+                sh "docker-compose up"
             } catch (e) {
                 error "Service update failed"
             }
