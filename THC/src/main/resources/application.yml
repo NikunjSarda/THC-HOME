@@ -22,8 +22,8 @@ management:
 # Spring configurations
 spring:
   datasource:
-    url: jdbc:sqlserver://0.0.0.0:1433;daatabaseName = msdb
-    username: sa
+    url: jdbc:sqlserver://0.0.0.0:1433;
+    username: user
     password: Root@123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
