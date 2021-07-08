@@ -1,7 +1,10 @@
 package com.home.thc.Services;
 
 import com.home.thc.DTO.ReservationDTO;
+import com.home.thc.Exception.NoDataException;
+import com.home.thc.Exception.OpenHoursException;
 import com.home.thc.Exception.ReservationException;
+import com.home.thc.Exception.THCException;
 import com.home.thc.Model.Customer;
 import com.home.thc.Model.Location;
 import com.home.thc.Model.Reservation;
@@ -35,8 +38,10 @@ public class ReservationServices implements ReservationInterface {
         Pageable pageable = PageRequest.of(page, size);
         List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findAll(pageable).getContent());
         if (reservationList.isEmpty()) {
-            throw new EmptyStackException();
+            log.error("reservations not found");
+            throw new NoDataException();
         }
+        log.info("reservations found", reservationList.size());
         return reservationList;
     }
 
@@ -49,34 +54,41 @@ public class ReservationServices implements ReservationInterface {
     public List<Reservation> getReservationByLocationId(String id) {
         List<Reservation> reservationList = new ArrayList<>(reservationsRepo.findReservationByLocationId(Long.parseLong(id)));
         if (reservationList.isEmpty()) {
-            throw new EmptyStackException();
+            throw new NoDataException();
         }
         return reservationList;
     }
 
     @Override
     public Boolean createReservation(ReservationDTO reservationDTO) {
-        log.info("Creating new Reservation");
-        Reservation reservation = new Reservation();
-        Customer customer = new Customer();
-        Location location = new Location();
-        BeanUtils.copyProperties(reservationDTO.getCustomer(), customer);
-        BeanUtils.copyProperties(reservationDTO.getLocation(), location);
-        BeanUtils.copyProperties(reservationDTO, reservation);
-        reservation.setCustomer(customer);
-        reservation.setLocation(location);
-        reservationsRepo.save(reservation);
-        return Boolean.TRUE;
+        try {
+            log.info("Creating new Reservation");
+            Reservation reservation = new Reservation();
+            Customer customer = new Customer();
+            Location location = new Location();
+            BeanUtils.copyProperties(reservationDTO.getCustomer(), customer);
+            BeanUtils.copyProperties(reservationDTO.getLocation(), location);
+            BeanUtils.copyProperties(reservationDTO, reservation);
+            reservation.setCustomer(customer);
+            reservation.setLocation(location);
+            reservationsRepo.save(reservation);
+            return Boolean.TRUE;
+        }
+        catch (Exception e){
+            throw new THCException("Internal Server Error", e);
+        }
     }
 
     @Override
     public Boolean updateReservation(String id, ReservationDTO reservationDTO) {
         Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findReservationByCustomerEmailId(id));
         if(reservation.isEmpty()) {
+            log.error("reservation not found");
             throw new ReservationException(id);
         }
         BeanUtils.copyProperties(reservationDTO, reservation.get());
         reservationsRepo.save(reservation.get());
+        log.info("reservation updated for id", id);
         return Boolean.TRUE;
     }
 
@@ -84,9 +96,11 @@ public class ReservationServices implements ReservationInterface {
     public Boolean deleteReservation(String id) {
         Optional<Reservation> reservation = Optional.ofNullable(reservationsRepo.findReservationByCustomerEmailId(id));
         if(reservation.isEmpty()) {
+            log.error("reservation not found");
             throw new ReservationException(id);
         }
         reservationsRepo.delete(reservation.get());
+        log.info("reservation removed for id", id);
         return Boolean.TRUE;
     }
 

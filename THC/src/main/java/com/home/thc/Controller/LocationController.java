@@ -32,6 +32,7 @@ public class LocationController {
             @ApiResponse(code = 200, message = "OK")
     })
     public Response<List<Location>> listAllLocation(@PathVariable(name = "page") int page, @PathVariable(name = "size") int size){
+        log.info("Getting list of all location");
         return Response.<List<Location>>builder()
                 .meta(ResponseMetaData.builder()
                         .statusCode(200)

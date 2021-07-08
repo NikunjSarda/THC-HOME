@@ -9,9 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class InterceptorConfiguration implements WebMvcConfigurer {
 
-    @Autowired
     ExecutionTimeInterceptor timeInterceptor;
 
+    public InterceptorConfiguration(ExecutionTimeInterceptor timeInterceptor){
+        this.timeInterceptor = timeInterceptor;
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

@@ -2,6 +2,8 @@ package com.home.thc.Services;
 
 import com.home.thc.DTO.MenuDTO;
 import com.home.thc.Exception.MenuException;
+import com.home.thc.Exception.NoDataException;
+import com.home.thc.Exception.THCException;
 import com.home.thc.Model.Menu;
 import com.home.thc.Repository.MenuRepository;
 import com.home.thc.Services.Interface.MenuInterface;
@@ -32,13 +34,16 @@ public class MenuServices implements MenuInterface {
         Pageable pageable = PageRequest.of(page, size);
         List<Menu> menuList = new ArrayList<>(menuRepo.findAll(pageable).getContent());
         if (menuList.isEmpty()) {
-            throw new EmptyStackException();
+            log.error("menu not found");
+            throw new NoDataException();
         }
+        log.info("menus found", menuList.size());
         return menuList;
     }
 
     @Override
     public Menu getMenuById(String id) {
+        log.info("menu found by id:", id);
         return menuRepo.findById(Long.parseLong(id)).orElseThrow(() -> new MenuException(id));
     }
 
@@ -46,8 +51,10 @@ public class MenuServices implements MenuInterface {
     public List<Menu> findByMenuName(String name) {
         List<Menu> menuList = new ArrayList<>(menuRepo.findByName(name));
         if (menuList.isEmpty()) {
-            throw new EmptyStackException();
+            log.error("menu not found");
+            throw new NoDataException();
         }
+        log.info("menus found by name", menuList.size());
         return menuList;
     }
 
@@ -55,26 +62,36 @@ public class MenuServices implements MenuInterface {
     public List<Menu> findByMenuType(String type) {
         List<Menu> menuList = new ArrayList<>(menuRepo.findByType(type));
         if (menuList.isEmpty()) {
+            log.error("menu not found");
             throw new EmptyStackException();
         }
+        log.info("menus found by name", menuList.size());
         return menuList;
     }
     @Override
     public Boolean createMenu(MenuDTO menuDTO) {
-        Menu menu = new Menu();
-        BeanUtils.copyProperties(menuDTO, menu);
-        menuRepo.save(menu);
-        return Boolean.TRUE;
+       try {
+           log.info("Creating menu");
+           Menu menu = new Menu();
+           BeanUtils.copyProperties(menuDTO, menu);
+           menuRepo.save(menu);
+           return Boolean.TRUE;
+       }
+       catch (Exception e){
+           throw new THCException("Internal Server Error", e);
+       }
     }
 
     @Override
     public Boolean updateMenu(String id, MenuDTO menuDTO) {
         Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
         if(menu.isEmpty()) {
+            log.error("menu not found");
             throw new MenuException(id);
         }
         BeanUtils.copyProperties(menuDTO, menu.get());
         menuRepo.save(menu.get());
+        log.info("menus updated for id:", id);
         return Boolean.TRUE;
     }
 
@@ -82,6 +99,7 @@ public class MenuServices implements MenuInterface {
     public Boolean deleteMenu(String id) {
         Optional<Menu> menu = menuRepo.findById(Long.parseLong(id));
         if(menu.isEmpty()) {
+            log.error("menu not found");
             throw new MenuException(id);
         }
         menuRepo.delete(menu.get());

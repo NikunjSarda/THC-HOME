@@ -2,7 +2,8 @@ package com.home.thc.Services;
 
 import com.home.thc.DTO.LocationDTO;
 import com.home.thc.Exception.LocationException;
-import com.home.thc.Exception.MenuException;
+import com.home.thc.Exception.NoDataException;
+import com.home.thc.Exception.THCException;
 import com.home.thc.Model.Location;
 import com.home.thc.Repository.LocationRepository;
 import com.home.thc.Services.Interface.LocationInterface;
@@ -13,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,13 +34,15 @@ public class LocationServices implements LocationInterface {
 
         List<Location> locationList = new ArrayList<>(locationRepo.findAll(pageable).getContent());
         if (locationList.isEmpty()) {
-            throw new EmptyStackException();
+            log.error("locations not found");
+            throw new NoDataException();
         }
         return locationList;
     }
 
     @Override
     public Location getByLocationId(String id) {
+        log.info("location found by id", id);
         return locationRepo.findById(Long.parseLong(id)).orElseThrow(() -> new LocationException(id));
     }
 
@@ -48,17 +50,24 @@ public class LocationServices implements LocationInterface {
     public List<Location> findByLocationName(String name) {
         List<Location> locationList = new ArrayList<>(locationRepo.findByName(name));
         if (locationList.isEmpty()) {
-            throw new EmptyStackException();
+            log.error("locations not found");
+            throw new NoDataException();
         }
+        log.info("location found by name", locationList.size());
         return locationList;
     }
 
     @Override
     public Boolean createLocation(LocationDTO locationDTO) {
-        Location location = new Location();
-        BeanUtils.copyProperties(locationDTO, location);
-        locationRepo.save(location);
-        return Boolean.TRUE;
+        try {
+            Location location = new Location();
+            BeanUtils.copyProperties(locationDTO, location);
+            locationRepo.save(location);
+            return Boolean.TRUE;
+        }
+        catch (Exception e){
+            throw new THCException("Internal Server Error", e);
+        }
     }
 
     @Override
@@ -76,7 +85,7 @@ public class LocationServices implements LocationInterface {
     public Boolean deleteLocation(String id) {
         Optional<Location> location = locationRepo.findById(Long.parseLong(id));
         if(location.isEmpty()) {
-            throw new MenuException(id);
+            throw new LocationException(id);
         }
         locationRepo.delete(location.get());
         return Boolean.TRUE;
