@@ -1,5 +1,13 @@
 version: '3.1'
 services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - $PWD:/var/jenkins_home
   app:
     container_name: thc
     image: thc
