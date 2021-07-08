@@ -1,0 +1,14 @@
+node {
+    stage("clean dir"){
+    deleteDir()
+    }
+    stage("Run THC") {
+        try {
+            bat "docker-compose down"
+            bat "docker system prune"
+            bat "docker-compose up --build -d"
+        } catch (e) {
+            error "Service update failed"
+        }
+    }
+}
