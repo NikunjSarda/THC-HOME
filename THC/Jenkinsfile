@@ -1,7 +1,5 @@
 node {
-    stage("clean dir"){
-    deleteDir()
-    }
+dir("E:\test\THC-HOME\THC")
     stage("Run THC") {
         try {
             sh "docker-compose down"
