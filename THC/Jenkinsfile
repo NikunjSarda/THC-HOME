@@ -4,7 +4,7 @@ node {
             try {
 //                 bat "docker-compose down"
 //                 bat "docker system prune"
-                sh "docker-compose up"
+                   "docker-compose up"
             } catch (e) {
                 error "Service update failed"
             }
